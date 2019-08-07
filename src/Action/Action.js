@@ -1,15 +1,13 @@
 import React from 'react';
 
 class Action extends React.Component{
-    //Will send an alert when button is clicked
-    handlePick(){
-        alert('handlePick');
-      }
-
     render(){
         return(
             <div>
-                <button onClick={this.handlePick}>What shoud I do?</button>
+                <button 
+                    onClick={this.props.pick}
+                    // The button will be disabled when their are no options
+                    disabled={!this.props.hasOptions}>What shoud I do?</button>
             </div>
         )
     }

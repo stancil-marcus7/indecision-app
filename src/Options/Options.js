@@ -1,9 +1,28 @@
 import React from  'react'
 import Option from './Option/Option'
 
+const obj = {
+    name: 'Vikram',
+    getName() {
+        return this.name;
+    }
+}
+
+const getName = obj.getName.bind(obj);
+
+console.log(getName());
+
 class Options extends React.Component{
+    //We're going to override the constructor
+    constructor(props){
+        super(props);
+        //This will make sure handleRemoveAll will always have the correct context
+        this.handleRemoveAll = this.handleRemoveAll.bind(this)
+    }
+
+    //This method loses all context  when itis called(props will show up null if bind(this) isnt attached to its calls)
     handleRemoveAll() {
-        alert('You just deleted something');
+        console.log(this.props.options)
     }
 
     render(){
@@ -14,8 +33,8 @@ class Options extends React.Component{
 
         return(
             <div>
+                <button onClick={this.props.deleteOptions}>Remove All</button>
                 {options}
-                <button onClick={this.handleRemoveAll}>Remove All</button>
             </div>
         )
     }
