@@ -4,7 +4,7 @@ import Header from './Header/Header'
 import Action from './Action/Action'
 import Options from './Options/Options'
 import AddOption from './AddOption/AddOption'
-import User from './User/User'
+// import User from './User/User'
 
 class App extends React.Component {
   constructor(props){
@@ -14,9 +14,9 @@ class App extends React.Component {
     this.handleAddOption = this.handleAddOption.bind(this)
     }
   
+    //Using default state
   state = {
-    options: []
-
+    options: this.props.options
   }
 
   handlePick(){
@@ -49,12 +49,11 @@ class App extends React.Component {
   }
 
   render(){
-    const title = "Indecision"
     const subTitle = "Put your life in the hands of a computer"
     
     return (
       <div className="App">
-        <Header title={title} subTitle={subTitle}/>
+        <Header subTitle={subTitle}/>
         <Action hasOptions={this.state.options.length > 0} pick={this.handlePick}/>
         <Options options={this.state.options} deleteOptions={this.handleDeleteOptions}/>
         <AddOption addOption={this.handleAddOption}/>
@@ -64,6 +63,10 @@ class App extends React.Component {
       </div> 
     );
   }
+}
+
+App.defaultProps = {
+  options: []
 }
 
 export default App;
