@@ -20,9 +20,10 @@ class AddOption extends React.Component{
         
         //When an option is added it will be sent to handleAddOption in App.js to get added to the option array
         const error = this.props.addOption(option)
+    
+        //If their is an error the error will set to what the local error is
+        this.setState(()  => ({error}))
         
-        this.setState(()  => ({error: error}))
-
         e.target.elements.option.value = '';
     }
 

@@ -19,6 +19,40 @@ class App extends React.Component {
   state = {
     options: this.props.options
   }
+  //Fires when the component did mount on the dom
+  componentDidMount() {
+
+    //Want to use a try catch just incase their are any errors in the JSON
+    try {
+    //Obtaining the data from local storage
+    const json = localStorage.getItem('options');
+    //Parsing the data into an array
+    const options = JSON.parse(json);
+    //If options are null they will be set to the default state (an empty array) instead of null
+    if (options){
+      //Resetting the state
+      this.setState(() => ({options: options}))
+    }
+    } catch (e) {
+      //We're not doing to do anything if there is an error
+    }
+    
+  }
+
+  //Will fire when the component updates (When we add and erase options)
+  componentDidUpdate(prevProps, prevState){
+    //If thre previous this.state.options array length isn't the same length as the current one, then we will save they new data
+    if (prevState.options.length !== this.state.options.length){
+      const json = JSON.stringify(this.state.options)
+      localStorage.setItem('options', json);
+    }
+    
+  }
+
+  //Will fire when a component goes away
+  componentWillUnmount(){
+    console.log('[componentWillUnmount]')
+  }
 
   handlePick(){
     const randomNum = Math.floor(Math.random() * this.state.options.length)
