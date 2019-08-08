@@ -4,7 +4,10 @@ import Option from './Option/Option'
 const Options = (props) => {
     // Maps the options to the Option component
     const options = props.options.map(option => {
-        return <Option key={option} message={option}/>;
+        return <Option 
+                key={option} 
+                text={option} 
+                deleteOption={props.deleteOption}/>;
     })
 
     return(

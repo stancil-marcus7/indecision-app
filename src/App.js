@@ -12,6 +12,7 @@ class App extends React.Component {
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
     this.handlePick = this.handlePick.bind(this)
     this.handleAddOption = this.handleAddOption.bind(this)
+    this.handleDeleteOption = this.handleDeleteOption.bind(this)
     }
   
     //Using default state
@@ -25,11 +26,18 @@ class App extends React.Component {
   }
 
   handleDeleteOptions() {
-    this.setState(() => {
-      return{
-        options: []
-      }
-    })
+    this.setState(() => ({options: []}));
+
+
+    // const num = () => {} will return a function body
+    // const num = () => ({}) will return a function body
+  }
+
+  handleDeleteOption(optionToDelete){
+    this.setState(prevState => ({
+      //If the option witin the options don't match the optionToDelete, they will remain in the array
+      options: prevState.options.filter(option => optionToDelete !== option)
+    }))
   }
 
   handleAddOption(option){
@@ -39,12 +47,9 @@ class App extends React.Component {
       return 'This option already exists'
     } 
 
-    this.setState(() => {
-      return{
-        options: [...this.state.options, option]
+    this.setState(() => ({options: [...this.state.options, option]
         //Could also do options: prevState.options.concat(options);
-      }
-    })
+      }))
     
   }
 
@@ -55,7 +60,7 @@ class App extends React.Component {
       <div className="App">
         <Header subTitle={subTitle}/>
         <Action hasOptions={this.state.options.length > 0} pick={this.handlePick}/>
-        <Options options={this.state.options} deleteOptions={this.handleDeleteOptions}/>
+        <Options options={this.state.options} deleteOptions={this.handleDeleteOptions} deleteOption={this.handleDeleteOption}/>
         <AddOption addOption={this.handleAddOption}/>
         {/* Just an example of a stateless functional component */}
         {/* <User name="Marcus"
