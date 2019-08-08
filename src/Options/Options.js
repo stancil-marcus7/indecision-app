@@ -1,6 +1,7 @@
 import React from  'react'
 import Option from './Option/Option'
 
+//Just an example of how methods need context
 const obj = {
     name: 'Vikram',
     getName() {

@@ -4,6 +4,7 @@ import Header from './Header/Header'
 import Action from './Action/Action'
 import Options from './Options/Options'
 import AddOption from './AddOption/AddOption'
+import User from './User/User'
 
 class App extends React.Component {
   constructor(props){
@@ -57,7 +58,10 @@ class App extends React.Component {
         <Action hasOptions={this.state.options.length > 0} pick={this.handlePick}/>
         <Options options={this.state.options} deleteOptions={this.handleDeleteOptions}/>
         <AddOption addOption={this.handleAddOption}/>
-      </div>
+        {/* Just an example of a stateless functional component */}
+        {/* <User name="Marcus"
+              age="23"/>*/}
+      </div> 
     );
   }
 }
