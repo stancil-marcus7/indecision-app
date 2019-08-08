@@ -4,12 +4,14 @@ import Header from './Header/Header'
 import Action from './Action/Action'
 import Options from './Options/Options'
 import AddOption from './AddOption/AddOption'
+import OptionModal from './OptionModal/OptionModal'
 // import User from './User/User'
 
 export default class App extends React.Component {
   
   state = {
-    options: []
+    options: [],
+    selectedOption: undefined
   }
   //Fires when the component did mount on the dom
   componentDidMount() {
@@ -48,7 +50,13 @@ export default class App extends React.Component {
 
   handlePick = () =>{
     const randomNum = Math.floor(Math.random() * this.state.options.length)
-    alert(this.state.options[randomNum]);
+    // alert(this.state.options[randomNum]);
+    //I know this is confusing; it will just make sure selctedOption has a value; truthy value is determined later
+    this.setState(() => ({selectedOption: this.state.options[randomNum]}))
+  }
+
+  handleCloseModal = () => {
+    this.setState(() => ({selectedOption: undefined}))
   }
 
   handleDeleteOptions = () => {
@@ -91,6 +99,9 @@ export default class App extends React.Component {
         {/* Just an example of a stateless functional component */}
         {/* <User name="Marcus"
               age="23"/>*/}
+      <OptionModal 
+        selectedOption={this.state.selectedOption}
+        closeModal={this.handleCloseModal}/>
       </div> 
     );
   }

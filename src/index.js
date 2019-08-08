@@ -4,6 +4,24 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// const Layout = (props) => {
+//     return (
+//         <div>
+//             <p>header</p>
+//             {/* This is how we can show template within the layout */}
+//             {props.children}
+//             <p>footer</p>
+//         </div>
+//     )
+// }
+
+// const template = (
+//     <div>
+//         <h1>Page Title</h1>
+//         <p>This is my page</p>
+//     </div>
+// )
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
