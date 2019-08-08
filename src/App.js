@@ -6,18 +6,10 @@ import Options from './Options/Options'
 import AddOption from './AddOption/AddOption'
 // import User from './User/User'
 
-class App extends React.Component {
-  constructor(props){
-    super(props)
-    this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
-    this.handlePick = this.handlePick.bind(this)
-    this.handleAddOption = this.handleAddOption.bind(this)
-    this.handleDeleteOption = this.handleDeleteOption.bind(this)
-    }
+export default class App extends React.Component {
   
-    //Using default state
   state = {
-    options: this.props.options
+    options: []
   }
   //Fires when the component did mount on the dom
   componentDidMount() {
@@ -54,12 +46,12 @@ class App extends React.Component {
     console.log('[componentWillUnmount]')
   }
 
-  handlePick(){
+  handlePick = () =>{
     const randomNum = Math.floor(Math.random() * this.state.options.length)
     alert(this.state.options[randomNum]);
   }
 
-  handleDeleteOptions() {
+  handleDeleteOptions = () => {
     this.setState(() => ({options: []}));
 
 
@@ -67,14 +59,14 @@ class App extends React.Component {
     // const num = () => ({}) will return a function body
   }
 
-  handleDeleteOption(optionToDelete){
+  handleDeleteOption = (optionToDelete) => {
     this.setState(prevState => ({
       //If the option witin the options don't match the optionToDelete, they will remain in the array
       options: prevState.options.filter(option => optionToDelete !== option)
     }))
   }
 
-  handleAddOption(option){
+  handleAddOption = (option) => {
     if (!option){
       return 'Enter valid value to item'
     } else if (this.state.options.indexOf(option) > -1){
@@ -104,8 +96,3 @@ class App extends React.Component {
   }
 }
 
-App.defaultProps = {
-  options: []
-}
-
-export default App;

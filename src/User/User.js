@@ -1,5 +1,4 @@
 import React from 'react';
-import { tsPropertySignature } from '@babel/types';
 
 // Example of Stateless Functional Component
 //You do need props as a parameter
