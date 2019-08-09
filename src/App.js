@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.scss';
+import './styles/styles.scss';
 import Header from './Header/Header'
 import Action from './Action/Action'
 import Options from './Options/Options'

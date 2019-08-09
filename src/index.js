@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+//Normalized the css settings in all settings
+import 'normalize.css/normalize.css'
 
 // const Layout = (props) => {
 //     return (

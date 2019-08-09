@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Header = (props) => (
-        <div>
-            <h1>{props.title}</h1>
+        <div className="header">
+            <h1 className="header__title">{props.title}</h1>
             {/* If a subTitle is in props, there will be one; if not there will be */}
-            {props.subTitle ? <h2>{props.subTitle}</h2>: null}
+            {props.subTitle ? <h2 className="header__subtitle">{props.subTitle}</h2>: null}
         </div>
     )
 

@@ -1,0 +1,16 @@
+html {
+    //62.5 x 16 (rem) = 10; so we'll work with a base of 10
+    font-size: 62.5%
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.6rem
+}
+
+.header__subtitle {
+    color: #a5afd7;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0;
+}
