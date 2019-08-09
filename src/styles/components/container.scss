@@ -1,0 +1,7 @@
+.container{
+    max-width: 60rem;
+    //To center title and subtitle
+    margin: 0 auto;
+    //To make sure title and subtitle are squished to the side in mobile
+    padding: 0 $m-size;
+}

@@ -1,2 +1,6 @@
+//Settings must be first
+@import './base/settings';
 @import './base/base';
-@import './components/header'
+@import './components/button';
+@import './components/container.scss';
+@import './components/header';

@@ -5,7 +5,9 @@ const Option = (props) => {
         //Gets message from Option component
         <div>{props.text}
         {/* Sending the option text to the handleDeleteOption function in App.js */}
-        <button onClick={(e) => {
+        <button 
+            className="button button--link"
+            onClick={(e) => {
             props.deleteOption(props.text)
         }}>
             -
