@@ -5,6 +5,10 @@
 
 //When the transition to the modal happens
 .ReactModalPortal .ReactModal__Overlay {
+    //Aligned items veritically and horizontally
+    align-items: center;
+    display: flex;
+    justify-content: center;
     transition: opacity  200ms ease-in-out;
 }
 
@@ -16,4 +20,25 @@
 //opacity when the modal isn't there
 .ReactModalPortal .ReactModal__Overlay--before-close{
     opacity: 0;
+}
+
+.modal{
+    background: $light-blue;
+    color: white;
+    //Prevent content from going outside of the box
+    max-width: 30rem;
+    outline: none;
+    padding: $l-size;
+    text-align: center;
+}
+
+.modal__ttile {
+    margin: 0 0 $m-size 0;
+}
+
+.modal__body {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0 0 $l-size 0;
+    word-break: break-all;
 }
