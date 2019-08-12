@@ -1,0 +1,19 @@
+//Targeting divs that are directly within the modal
+.ReactModalPortal > div {
+    opacity: 0;
+}
+
+//When the transition to the modal happens
+.ReactModalPortal .ReactModal__Overlay {
+    transition: opacity  200ms ease-in-out;
+}
+
+//opacity when the modal is there
+.ReactModalPortal .ReactModal__Overlay--after-open{
+    opacity: 1;
+}
+
+//opacity when the modal isn't there
+.ReactModalPortal .ReactModal__Overlay--before-close{
+    opacity: 0;
+}

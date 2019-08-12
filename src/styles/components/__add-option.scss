@@ -1,0 +1,34 @@
+.add-option{
+    display: flex;
+    flex-direction: column;
+    padding: $m-size;
+}
+
+.add-option-error{
+    color: $off-white;
+    font-style: italic;
+    margin: $m-size 0 0 0;
+    padding: 0 $m-size;
+}
+
+.add-option__input {
+    color: $off-white;
+    background: $dark-blue;
+    border: none;
+    border-bottom: 3px solid darken($dark-blue, 10%);
+    //This tells the input to grow as wide as possible
+    flex-grow: 1;
+    margin: 0 0 $s-size 0;
+    padding: $s-size;
+}
+
+@media screen and (min-width: 400px){
+    .add-option {
+        flex-direction: row;
+    }
+
+    .add-option input {
+    margin: 0 $s-size 0 0;
+    }
+}
+

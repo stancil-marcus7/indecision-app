@@ -17,9 +17,9 @@
 
 //Button
 .button{
-    background: $purple;
+    background-color: $purple;
     border: none;
-    border-bottom: .6rem solid darken($purple, 10%);
+    border-bottom: .3rem solid darken($purple, 10%);
     color: white;
     font-weight: 500;
     padding: $s-size;

@@ -6,6 +6,7 @@ const OptionModal = (props) =>(
         //This converts props.selectedOption to a boolean value
         isOpen={!!props.selectedOption}
         onRequestClose={props.closeModal}
+        closeTimeoutMS={200}
         contentLabel="Selected Option">
         <h3>Selected Option</h3>
         {props.selectedOption && <p>{props.selectedOption}</p>}
