@@ -18,16 +18,18 @@
     border-bottom: 3px solid darken($dark-blue, 10%);
     //This tells the input to grow as wide as possible
     flex-grow: 1;
+    //This is for mobile so that the input won't touch the button
     margin: 0 0 $s-size 0;
     padding: $s-size;
 }
 
-@media screen and (min-width: 400px){
+//Stlyes above 45rem will have this stlying
+@media screen and (min-width: $desktop-breakpoint){
     .add-option {
         flex-direction: row;
     }
 
-    .add-option input {
+    .add-option__input {
     margin: 0 $s-size 0 0;
     }
 }
